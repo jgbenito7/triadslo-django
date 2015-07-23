@@ -1,0 +1,57 @@
+.osLight{
+  font-family: Maven Pro;
+}
+
+body{
+  font-family: Maven Pro;
+}
+
+.home-caption{
+  top:230px;
+}
+
+.propWidget-2 .fig img{
+  height:240px;
+}
+
+.propWidget-1 .fig img{
+  height:230px;
+}
+
+.propWidget-1 .fig .figCap h3{
+  /*margin-bottom:10px;*/
+}
+.blur{
+  height:240px;
+}
+
+.agent-img{
+  border: 2px solid grey;
+}
+
+/*
+.agent-avatar .ring{
+  border: 10px solid grey;
+}*/
+
+#wrapper{
+
+  left:0;
+  margin-left:0;
+}
+
+.slide-img{
+  width:100%;
+  height:400px;
+}
+
+.highlight, .btn-green{
+  background:rgb(145, 150, 147);
+}
+
+.s-icon{
+  color:rgb(145, 150, 147);
+}
+h2.s-main{
+  color:rgb(145, 150, 147);
+}
