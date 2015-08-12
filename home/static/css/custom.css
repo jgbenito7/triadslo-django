@@ -1,3 +1,15 @@
+.home-nav ul li a{
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+@media (max-width:768px){
+  .home-nav ul li a{
+    font-size: 10px !important;
+  }
+}
+
+
 .osLight{
   font-family: Maven Pro;
 }
@@ -54,4 +66,77 @@ body{
 }
 h2.s-main{
   color:rgb(145, 150, 147);
+}
+
+.btn-green:hover{
+  background:#397491 !important;
+}
+.s-menu-item:hover{
+  background:#397491 !important;
+}
+
+.wrap-right{
+  top:-20px;
+  right:0;
+  position: absolute;
+}
+
+.big-price{
+  font-size:25px;
+  font-weight:400;
+}
+
+.home-testim{
+  margin-left:0px;
+}
+
+.home-testim-avatar{
+  margin-right:10px;
+}
+
+#home-testimonials .carousel-inner{
+  width:100%;
+}
+
+.twitter{
+  font-size:16px;
+  text-align: center;
+}
+
+.social-icons-black{
+  color:grey !important;
+}
+
+.logo{
+  background-color: rgb(145, 150, 147);
+}
+
+.icon-wrap{
+  float:right;
+  margin-top:15px;
+  margin-right:15px;
+}
+
+.agent-avatar{
+  border-radius:0;
+  border:1px solid grey;
+}
+
+.agent-avatar img, .ring{
+  width:200px !important;
+  height:200px !important;
+  border-radius:0 !important;
+}
+
+.font22{
+  font-size:22px;
+}
+
+.font16{
+  font-size:16px;
+}
+
+.pc-avatar img{
+  width: 150px !important;
+  height: 150px !important;
 }

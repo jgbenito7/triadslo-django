@@ -14,12 +14,12 @@
         <link href="/static/css/custom.css" rel="stylesheet">
     </head>
     <body class="notransition no-hidden">
-      <div style="position:absolute;top:0;height:300px;width:100%;background:url('/static/images/wood.jpg');background-size:cover;">
+      <div style="position:absolute;top:0;height:300px;width:100%;background:rgb(100,100,100)">
         <div style='margin-top:150px;magin:auto;text-align:center;'>
           <div class="home-caption" style='top:100px;'>
 
               <div class="home-title">Our Listings</div>
-              <div class="home-subtitle">Find You Perfect Home</div>
+              <div class="home-subtitle">Find Your Perfect Home</div>
               <a href="#" class="btn btn-lg btn-black">Learn More</a>
           </div>
         </div>
@@ -31,14 +31,14 @@
               <ul>
                   <li><a href="{% url 'index' %}">Home</a></li>
                   <li><a href="{% url 'listings' %}">Properties</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#signin">Meet The Team</a></li>
+                  <li><a href="{% url 'agents' %}">Meet The Team</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#signin">Community</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#signin">Resources</a></li>
-                  <li><a href="add.html" class="btn btn-green">Contact Us</a></li>
+                  <li><a href="add.html" class="btn btn-green" style='display:none'>Contact Us</a></li>
               </ul>
           </div>
       </div><br><br><br><br>
-      <div class='home-wrapper' style='margin-top:240px; width:100%'>
+      <div class='home-wrapper' style='margin-top:215px; width:100%'>
         <div class='home-content'>
           <!--<h2 class="osLight">Our Listings</h2>-->
           <div class='row pb40'>

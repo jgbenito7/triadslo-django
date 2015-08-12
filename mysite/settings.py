@@ -35,7 +35,7 @@ INSTALLED_APPS = (
     'adminsortable2',
     'photologue',
     'sortedm2m',
-    'hitcount',
+    'preferences',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,12 +76,16 @@ DATABASES = {
         'PASSWORD': 'espana',
         'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
         'PORT': '8889',
+        'OPTIONS': {
+           "init_command": "SET storage_engine=MyISAM",
+        }
     }
 }
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.contrib.auth.context_processors.auth",
+    "preferences.context_processors.preferences_cp",
 )
 
 # Internationalization

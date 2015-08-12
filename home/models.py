@@ -12,13 +12,21 @@ from __future__ import unicode_literals
 from django.db import models
 from adminsortable.models import Sortable
 from photologue.models import Gallery
+from preferences.models import Preferences
 
 YES_OR_NO = (('yes','yes'),('no','no'))
+YES_NO_HIDE = (('yes','yes'),('no','no'),('hide','hide'))
+
 STATUS = (
     ('active','active'),
     ('pending','pending'),
     ('sold','sold')
 )
+
+class MyPreferences(Preferences):
+    __module__ = 'preferences.models'
+    #tagline = models.CharField(max_length=50, blank=True)
+    #test = models.EmailField()
 
 class Agent(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
@@ -71,12 +79,14 @@ class Listing(models.Model):
     #precedence = models.IntegerField(default=0)
     title = models.CharField(max_length=75)
     info = models.TextField()
-    bedrooms = models.CharField(max_length=100)
-    bathrooms = models.CharField(max_length=100)
-    square_feet = models.CharField(max_length=100)
-    acres = models.CharField(max_length=100)
+    bedrooms = models.CharField(max_length=100, blank=True)
+    bathrooms = models.CharField(max_length=100, blank=True)
+    square_feet = models.CharField(max_length=100, blank=True)
+    acres = models.CharField(max_length=100, blank=True)
     cost = models.CharField(max_length=100)
     mls = models.CharField(db_column='MLS', max_length=50, blank=True)  # Field name made lowercase.
+    latitude = models.FloatField(default=0,blank=True)
+    longitude = models.FloatField(default=0,blank=True)
     #album = models.CharField(max_length=200)
     virtual_tour = models.CharField(max_length=255, blank=True)
     featured = models.CharField(max_length=3, choices=YES_OR_NO, default='no')
@@ -84,11 +94,44 @@ class Listing(models.Model):
     status = models.CharField(max_length=11, choices=STATUS)
     request_button = models.CharField(max_length=3, choices=YES_OR_NO, default='no')
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
-    gallery = models.ForeignKey(Gallery,null=True)
-    agent = models.ForeignKey(Agent,null=True)
+    gallery = models.ForeignKey(Gallery,null=True,blank=True)
+
+    garage = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    outdoor_pool = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    garden = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    security_system = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    air_conditioning = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    heating = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    fireplace = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    balcony = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    tv_cable = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    pantry = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    laundy_room = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    elevator = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    skylights = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    cathedral_cielings = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    wet_bar = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    hot_tub = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    patio = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    bbq = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    decks = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    horses_allowed = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    fenced_yard = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    guest_quarters = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+    barn = models.CharField(max_length=5, choices=YES_NO_HIDE, default='no')
+
     def getAlbum(self):
         return self.album;
 
     class Meta(object):
         db_table = 'listings'
+        ordering = ('order',)
+
+class Testimonial(models.Model):
+    id = models.AutoField(primary_key=True)  # AutoField?
+    agent = models.ForeignKey(Agent,null=True,blank=True)
+    testimonial = models.TextField(null=True,blank=True)
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
         ordering = ('order',)

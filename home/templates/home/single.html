@@ -43,173 +43,17 @@
 
         <div id="header">
             <div class="logo">
-                <a href="index.html">
-                    <span class="fa fa-home marker"></span>
-                    <span class="logoText">reales</span>
+                <a href="{% url 'listings' %}">
+                    <span class="fa fa-arrow-left marker"></span>
+                    <span class="logoText">Go Back</span>
                 </a>
             </div>
-            <a href="#" class="navHandler"><span class="fa fa-bars"></span></a>
-            <div class="search">
-                <span class="searchIcon icon-magnifier"></span>
-                <input type="text" placeholder="Search for houses, apartments...">
-            </div>
-            <div class="headerUserWraper">
-                <a href="#" class="userHandler dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span><span class="counter">5</span></a>
-                <a href="#" class="headerUser dropdown-toggle" data-toggle="dropdown">
-                    <img class="avatar headerAvatar pull-left" src="/static/images/avatar-1.png" alt="avatar">
-                    <div class="userTop pull-left">
-                        <span class="headerUserName">John Smith</span> <span class="fa fa-angle-down"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-                <div class="dropdown-menu pull-right userMenu" role="menu">
-                    <div class="mobAvatar">
-                        <img class="avatar mobAvatarImg" src="/static/images/avatar-1.png" alt="avatar">
-                        <div class="mobAvatarName">John Smith</div>
-                    </div>
-                    <ul>
-                        <li><a href="#"><span class="icon-settings"></span>Settings</a></li>
-                        <li><a href="profile.html"><span class="icon-user"></span>Profile</a></li>
-                        <li><a href="#"><span class="icon-bell"></span>Notifications <span class="badge pull-right bg-red">5</span></a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><span class="icon-power"></span>Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="headerNotifyWraper">
-                <a href="#" class="headerNotify dropdown-toggle" data-toggle="dropdown">
-                    <span class="notifyIcon icon-bell"></span>
-                    <span class="counter">5</span>
-                </a>
-                <div class="dropdown-menu pull-right notifyMenu" role="menu">
-                    <div class="notifyHeader">
-                        <span>Notifications</span>
-                        <a href="#" class="notifySettings icon-settings"></a>
-                        <div class="clearfix"></div>
-                    </div>
-                    <ul class="notifyList">
-                        <li>
-                            <a href="#">
-                                <img class="avatar pull-left" src="/static/images/avatar-1.png" alt="avatar">
-                                <div class="pulse border-grey"></div>
-                                <div class="notify pull-left">
-                                    <div class="notifyName">Sed ut perspiciatis unde</div>
-                                    <div class="notifyTime">5 minutes ago</div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="notifyRound notifyRound-red fa fa-envelope-o"></div>
-                                <div class="pulse border-red"></div>
-                                <div class="notify pull-left">
-                                    <div class="notifyName">Lorem Ipsum is simply dummy text</div>
-                                    <div class="notifyTime">20 minutes ago</div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="notifyRound notifyRound-yellow fa fa-heart-o"></div>
-                                <div class="pulse border-yellow"></div>
-                                <div class="notify pull-left">
-                                    <div class="notifyName">It is a long established fact</div>
-                                    <div class="notifyTime">2 hours ago</div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="notifyRound notifyRound-magenta fa fa-paper-plane-o"></div>
-                                <div class="pulse border-magenta"></div>
-                                <div class="notify pull-left">
-                                    <div class="notifyName">There are many variations</div>
-                                    <div class="notifyTime">1 day ago</div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#" class="notifyAll">See All</a>
-                </div>
-            </div>
-            <a href="#" class="mapHandler"><span class="icon-map"></span></a>
+            <div class='icon-wrap'>
+            <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-pinterest"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-linkedin"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-instagram"></span></a>
+          </div>
             <div class="clearfix"></div>
         </div>
 
-        <!-- Left Side Navigation -->
-
-        <!--
-        <div id="leftSide">
-            <nav class="leftNav scrollable">
-                <div class="search">
-                    <span class="searchIcon icon-magnifier"></span>
-                    <input type="text" placeholder="Search for houses, apartments...">
-                    <div class="clearfix"></div>
-                </div>
-                <ul>
-                    <li><a href="explore.html"><span class="navIcon icon-compass"></span><span class="navLabel">Explore</span></a></li>
-                    <li><a href="single.html"><span class="navIcon icon-home"></span><span class="navLabel">Single</span></a></li>
-                    <li><a href="add.html"><span class="navIcon icon-plus"></span><span class="navLabel">New</span></a></li>
-                    <li class="hasSub">
-                        <a href="#"><span class="navIcon icon-drop"></span><span class="navLabel">Colors</span><span class="fa fa-angle-left arrowRight"></span><span class="badge bg-yellow">5</span></a>
-                        <ul class="colors">
-                            <li><a href="#">Red <span class="fa fa-circle-o c-red icon-right"></span></a></li>
-                            <li><a href="#">Green <span class="fa fa-circle-o c-green icon-right"></span></a></li>
-                            <li><a href="#">Blue <span class="fa fa-circle-o c-blue icon-right"></span></a></li>
-                            <li><a href="#">Yellow <span class="fa fa-circle-o c-yellow icon-right"></span></a></li>
-                            <li><a href="#">Magenta <span class="fa fa-circle-o c-magenta icon-right"></span></a></li>
-                        </ul>
-                    </li>
-                    <li class="hasSub">
-                        <a href="#"><span class="navIcon icon-layers"></span><span class="navLabel">Elements</span><span class="fa fa-angle-left arrowRight"></span></a>
-                        <ul>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="icons.html">Icons <span class="badge pull-right bg-yellow">841</span></a></li>
-                            <li><a href="grid.html">Grid</a></li>
-                            <li><a href="widgets.html">Widgets</a></li>
-                            <li><a href="components.html">Components</a></li>
-                            <li><a href="lists.html">Lists</a></li>
-                            <li><a href="tables.html">Tables</a></li>
-                            <li><a href="form.html">Form</a></li>
-                        </ul>
-                    </li>
-                    <li class="hasSub">
-                        <a href="#"><span class="navIcon icon-link"></span><span class="navLabel">Pages</span><span class="fa fa-angle-left arrowRight"></span></a>
-                        <ul>
-                            <li><a href="signin.html">Sign In</a></li>
-                            <li><a href="signup.html">Sign Up</a></li>
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="index.html">Homepage Slideshow</a></li>
-                            <li><a href="index-map.html">Homepage Map</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-post.html">Blog Post</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="leftUserWraper dropup">
-                <a href="#" class="avatarAction dropdown-toggle" data-toggle="dropdown">
-                    <img class="avatar" src="images/avatar-1.png" alt="avatar"><span class="counter">5</span>
-                    <div class="userBottom pull-left">
-                        <span class="bottomUserName">John Smith</span> <span class="fa fa-angle-up pull-right arrowUp"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#"><span class="icon-settings"></span>Settings</a></li>
-                    <li><a href="profile.html"><span class="icon-user"></span>Profile</a></li>
-                    <li><a href="#"><span class="icon-bell"></span>Notifications <span class="badge pull-right bg-red">5</span></a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><span class="icon-power"></span>Logout</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="closeLeftSide"></div>
-      -->
         <!-- Content -->
 
         <div id="wrapper">
@@ -218,7 +62,6 @@
                 <div class="singleTop">
                     <div id="carouselFull" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-
                           {% for listing in listings %}
                             {% for album in gallery %}
                               {% if listing.gallery.title == album.title %}
@@ -232,8 +75,6 @@
                               {% endif %}
                             {% endfor %}
                           {% endfor %}
-
-
                         </ol>
                         <div class="carousel-inner">
                         {% if listings %}
@@ -258,31 +99,34 @@
                           {% endfor %}
                         {% endfor %}
                         {% endif %}
-
                         </div>
                         <a class="left carousel-control" href="#carouselFull" role="button" data-slide="prev"><span class="fa fa-chevron-left"></span></a>
                         <a class="right carousel-control" href="#carouselFull" role="button" data-slide="next"><span class="fa fa-chevron-right"></span></a>
                     </div>
                     {% for listing in listings %}
+                    <script>
+                      function commaSeparateNumber(val){
+                        while (/(\d+)(\d{3})/.test(val.toString())){
+                          val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+                        }
+                        return val;
+                      }
+
+                      $(document).ready(function(){
+                        var cost = {{listing.cost}};
+                        var formatted = commaSeparateNumber(cost);
+                        $('#cost').text('$' + formatted);
+                      });
+                    </script>
                     <div class="summary">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                            <div class="col-xs-12 col-sm-12">
                                 <div class="summaryItem">
                                     <h1 class="pageTitle">{{listing.title}}</h1>
                                     <div class="address"><span class="icon-pointer"></span> {{listing.title}}</div>
-                                    <ul class="rating">
-                                        <li><a href="#"><span class="fa fa-star"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-star"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-star"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-star"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-star"></span></a></li>
-                                        <li>(146)</li>
-                                    </ul>
-                                    <div class="favLink"><a href="#"><span class="icon-heart"></span></a>54</div>
-                                    <ul class="stats">
-                                        <li><span class="icon-eye"></span> 200</li>
-                                        <li><span class="icon-bubble"></span> 13</li>
-                                    </ul>
+                                    <div class='wrap-right'>
+                                      <h1 class='big-price' id='cost'></h1>
+                                    </div>
                                     <div class="clearfix"></div>
                                     <ul class="features">
                                         <li><span class="fa fa-moon-o"></span><div>{{listing.bedrooms}} Bedrooms</div></li>
@@ -292,14 +136,14 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <!--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                                 <div class="agentAvatar summaryItem">
                                      <div class="clearfix"></div>
                                     <img class="avatar agentAvatarImg" src="/static/images/avatar-2.png" alt="avatar">
                                     <div class="agentName">Jane Smith</div>
                                     <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">Contact Agent</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -307,7 +151,7 @@
                 <div class="description">
                     <h3>Description</h3>
                     <p>{{listing.info}}</p>
-                </div>
+                </div><!--
                 <div class="share">
                     <h3>Share on Social Networks</h3>
                     <div class="row">
@@ -324,21 +168,74 @@
                             <a href="#" class="btn btn-sm btn-round btn-o btn-pinterest"><span class="fa fa-pinterest"></span> Pinterest</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="amenities">
                     <h3>Amenities</h3>
                     <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-car"></span> Garage</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-tint"></span> Outdoor Pool</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-leaf"></span> Garden</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-shield"></span> Security System</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-wifi"></span> Internet</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-phone"></span> Telephone</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-asterisk"></span> Air Conditioning</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-sun-o"></span> Heating</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-fire"></span> Fireplace</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-arrows-v"></span> Balcony</div>
-                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-desktop"></span> TV Cable</div>
+                        {% if listing.garage == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-car"></span> Garage</div>
+                        {% elif listing.garage == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-car"></span> Garage</div>
+                        {% endif %}
+
+                        {% if listing.outdoor_pool == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-tint"></span> Outdoor Pool</div>
+                        {% elif listing.outdoor_pool == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-tint"></span> Outdoor Pool</div>
+                        {% endif %}
+
+                        {% if listing.garden == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-leaf"></span> Garden</div>
+                        {% elif listing.garden == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-leaf"></span> Garden</div>
+                        {% endif %}
+
+                        {% if listing.security_system == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-shield"></span> Security System</div>
+                        {% elif listing.security_system == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-shield"></span> Security System</div>
+                        {% endif %}
+
+                        {% if listing.air_conditioning == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-asterisk"></span> Air Conditioning</div>
+                        {% elif listing.air_conditioning == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-asterisk"></span> Air Conditioning</div>
+                        {% endif %}
+
+                        {% if listing.heating == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-sun-o"></span> Heating</div>
+                        {% elif listing.heating == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-sun-o"></span> Heating</div>
+                        {% endif %}
+
+                        {% if listing.fireplace == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-fire"></span> Fireplace</div>
+                        {% elif listing.fireplace == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-fire"></span> Fireplace</div>
+                        {% endif %}
+
+                        {% if listing.balcony == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-arrow-v"></span> Balcony</div>
+                        {% elif listing.balcony == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-arrows-v"></span> Balcony</div>
+                        {% endif %}
+
+                        {% if listing.tv_cable == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-desktop"></span> TV Cable</div>
+                        {% elif listing.tv_cable == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-desktop"></span> TV Cable</div>
+                        {% endif %}
+
+                        {% if listing.pantry == 'yes' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem"><span class="fa fa-th-large"></span> Pantry</div>
+                        {% elif listing.pantry == 'no' %}
+                          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 amItem inactive"><span class="fa fa-th-large"></span> Pantry</div>
+                        {% endif %}
+
+                        
+
+
+
                     </div>
                 </div>
                 {% endfor %}
@@ -419,79 +316,6 @@
                                                 <li><span class="fa fa-moon-o"></span> 2</li>
                                                 <li><span class="icon-drop"></span> 3</li>
                                                 <li><span class="icon-frame"></span> 2640 Sq Ft</li>
-                                            </ul>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-xs-4">
-                                        <div data-linkto="single.html" class="card">
-                                            <div class="figure">
-                                                <img src="/static/images/prop/4-1.png" alt="image">
-                                                <div class="figCaption">
-                                                    <div>$1,930,000</div>
-                                                    <span class="icon-eye"> 145</span>
-                                                    <span class="icon-heart"> 99</span>
-                                                    <span class="icon-bubble"> 25</span>
-                                                </div>
-                                                <div class="figView"><span class="icon-eye"></span></div>
-                                                <div class="figType">For Sale</div>
-                                            </div>
-                                            <h2>House With a Lovely Glass-Roofed Pergola</h2>
-                                            <div class="cardAddress"><span class="icon-pointer"></span> Wunsch Bldg, Brooklyn, NY 11201, USA</div>
-                                            <ul class="cardFeat">
-                                                <li><span class="fa fa-moon-o"></span> 3</li>
-                                                <li><span class="icon-drop"></span> 2</li>
-                                                <li><span class="icon-frame"></span> 2800 Sq Ft</li>
-                                            </ul>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div data-linkto="single.html" class="card">
-                                            <div class="figure">
-                                                <img src="/static/images/prop/5-1.png" alt="image">
-                                                <div class="figCaption">
-                                                    <div>$2,350,000</div>
-                                                    <span class="icon-eye"> 184</span>
-                                                    <span class="icon-heart"> 120</span>
-                                                    <span class="icon-bubble"> 18</span>
-                                                </div>
-                                                <div class="figView"><span class="icon-eye"></span></div>
-                                                <div class="figType">For Rent</div>
-                                            </div>
-                                            <h2>Luxury Mansion</h2>
-                                            <div class="cardAddress"><span class="icon-pointer"></span> 95 Butler St, Brooklyn, NY 11231, USA</div>
-                                            <ul class="cardFeat">
-                                                <li><span class="fa fa-moon-o"></span> 2</li>
-                                                <li><span class="icon-drop"></span> 2</li>
-                                                <li><span class="icon-frame"></span> 2750 Sq Ft</li>
-                                            </ul>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div data-linkto="single.html" class="card">
-                                            <div class="figure">
-                                                <img src="/static/images/prop/1-1.png" alt="image">
-                                                <div class="figCaption">
-                                                    <div>$1,550,000</div>
-                                                    <span class="icon-eye"> 200</span>
-                                                    <span class="icon-heart"> 54</span>
-                                                    <span class="icon-bubble"> 13</span>
-                                                </div>
-                                                <div class="figView"><span class="icon-eye"></span></div>
-                                                <div class="figType">FOR SALE</div>
-                                            </div>
-                                            <h2>Modern Residence in New York</h2>
-                                            <div class="cardAddress"><span class="icon-pointer"></span> 39 Remsen St, Brooklyn, NY 11201, USA</div>
-                                            <ul class="cardFeat">
-                                                <li><span class="fa fa-moon-o"></span> 3</li>
-                                                <li><span class="icon-drop"></span> 2</li>
-                                                <li><span class="icon-frame"></span> 3430 Sq Ft</li>
                                             </ul>
                                             <div class="clearfix"></div>
                                         </div>
@@ -993,6 +817,598 @@
         <script src="/static/js/infobox.js"></script>
         <script src="/static/js/jquery.tagsinput.min.js"></script>
         <script src="/static/js/bootstrap-datepicker.js"></script>
-        <script src="/static/js/app.js" type="text/javascript"></script>
+        <script>
+        // Custom options for map
+        var options = {
+                zoom : 14,
+                mapTypeId : 'Styled',
+                disableDefaultUI: true,
+                mapTypeControlOptions : {
+                    mapTypeIds : [ 'Styled' ]
+                }
+            };
+        var styles = [{
+            stylers : [ {
+                hue : "#cccccc"
+            }, {
+                saturation : -100
+            }]
+        }, {
+            featureType : "road",
+            elementType : "geometry",
+            stylers : [ {
+                lightness : 100
+            }, {
+                visibility : "simplified"
+            }]
+        }, {
+            featureType : "road",
+            elementType : "labels",
+            stylers : [ {
+                visibility : "on"
+            }]
+        }, {
+            featureType: "poi",
+            stylers: [ {
+                visibility: "off"
+            }]
+        }];
+
+        var newMarker = null;
+        var markers = [];
+
+        // json for properties markers on map
+        var props = [
+
+        {% if allListings %}
+          {% for listing in allListings %}
+          {% for single in listings %}
+            {% if listing.longitude %}
+            {% for album in gallery %}
+              {% if listing.gallery.title == album.title %}
+                {% with album.photos.all|first as photo %}
+          {
+            title : '{{listing.title}}',
+            image : '/media/{{photo.image}}',
+            type : '{{listing.status}}',
+            price : '${{listing.cost}}',
+            address : '{{listing.title}}',
+            bedrooms : '{{listing.bedrooms}}',
+            bathrooms : '{{listing.bathrooms}}',
+            area : '{{listing.square_feet}} Sq Ft',
+            position : {
+                lat : {{listing.latitude}},
+                lng : {{listing.longitude}}
+            },
+            {% if listing.id == single.id %}
+            markerIcon : "marker-red.png",
+            {% else %}
+            markerIcon : "marker-green.png",
+            {% endif %}
+            id: {{listing.id}}
+        },
+
+        {% endwith %}
+      {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+
+      ];
+
+        // custom infowindow object
+        var infobox = new InfoBox({
+            disableAutoPan: false,
+            maxWidth: 202,
+            pixelOffset: new google.maps.Size(-101, -285),
+            zIndex: null,
+            boxStyle: {
+                background: "url('/static/images/infobox-bg.png') no-repeat",
+                opacity: 1,
+                width: "202px",
+                height: "245px"
+            },
+            closeBoxMargin: "28px 26px 0px 0px",
+            closeBoxURL: "",
+            infoBoxClearance: new google.maps.Size(1, 1),
+            pane: "floatPane",
+            enableEventPropagation: false
+        });
+
+        // function that adds the markers on map
+        var addMarkers = function(props, map) {
+            $.each(props, function(i,prop) {
+                var latlng = new google.maps.LatLng(prop.position.lat,prop.position.lng);
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    icon: new google.maps.MarkerImage(
+                        '/static/images/' + prop.markerIcon,
+                        null,
+                        null,
+                        null,
+                        new google.maps.Size(36, 36)
+                    ),
+                    draggable: false,
+                    animation: google.maps.Animation.DROP,
+                });
+                var infoboxContent = '<div class="infoW">' +
+                                        '<div class="propImg">' +
+                                            '<img src="' + prop.image + '">' +
+                                            '<div class="propBg">' +
+                                                '<div class="propPrice">' + prop.price + '</div>' +
+                                                '<div class="propType">' + prop.type + '</div>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="paWrapper">' +
+                                            '<div class="propTitle">' + prop.title + '</div>' +
+                                            '<div class="propAddress">' + prop.address + '</div>' +
+                                        '</div>' +
+                                        '<div class="propRating">' +
+                                            '<span class="fa fa-star"></span>' +
+                                            '<span class="fa fa-star"></span>' +
+                                            '<span class="fa fa-star"></span>' +
+                                            '<span class="fa fa-star"></span>' +
+                                            '<span class="fa fa-star-o"></span>' +
+                                        '</div>' +
+                                        '<ul class="propFeat">' +
+                                            '<li><span class="fa fa-moon-o"></span> ' + prop.bedrooms + '</li>' +
+                                            '<li><span class="icon-drop"></span> ' + prop.bathrooms + '</li>' +
+                                            '<li><span class="icon-frame"></span> ' + prop.area + '</li>' +
+                                        '</ul>' +
+                                        '<div class="clearfix"></div>' +
+                                        '<div class="infoButtons">' +
+                                            '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
+                                            '<a href="" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
+                                        '</div>' +
+                                     '</div>';
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infobox.setContent(infoboxContent);
+                        infobox.open(map, marker);
+                    }
+                })(marker, i));
+
+                $(document).on('click', '.closeInfo', function() {
+                    infobox.open(null,null);
+                });
+
+                markers.push(marker);
+            });
+        }
+
+        var map;
+        var windowHeight;
+        var windowWidth;
+        var contentHeight;
+        var contentWidth;
+        var isDevice = true;
+
+        // calculations for elements that changes size on window resize
+        var windowResizeHandler = function() {
+            windowHeight = window.innerHeight;
+            windowWidth = $(window).width();
+            contentHeight = windowHeight - $('#header').height();
+            contentWidth = $('#content').width();
+
+            $('#leftSide').height(contentHeight);
+            $('.closeLeftSide').height(contentHeight);
+            $('#wrapper').height(contentHeight);
+            $('#mapView').height(contentHeight);
+            $('#content').height(contentHeight);
+            setTimeout(function() {
+                $('.commentsFormWrapper').width(contentWidth);
+            }, 300);
+
+            if (map) {
+                google.maps.event.trigger(map, 'resize');
+            }
+
+            // Add custom scrollbar for left side navigation
+            if(windowWidth > 767) {
+                $('.bigNav').slimScroll({
+                    height : contentHeight - $('.leftUserWraper').height()
+                });
+            } else {
+                $('.bigNav').slimScroll({
+                    height : contentHeight
+                });
+            }
+            if($('.bigNav').parent('.slimScrollDiv').size() > 0) {
+                $('.bigNav').parent().replaceWith($('.bigNav'));
+                if(windowWidth > 767) {
+                    $('.bigNav').slimScroll({
+                        height : contentHeight - $('.leftUserWraper').height()
+                    });
+                } else {
+                    $('.bigNav').slimScroll({
+                        height : contentHeight
+                    });
+                }
+            }
+
+            // reposition of prices and area reange sliders tooltip
+            var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+            var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+            var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+            $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+
+            var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+            var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+            var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+            $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+        }
+
+        var repositionTooltip = function( e, ui ){
+            var div = $(ui.handle).data("bs.tooltip").$tip[0];
+            var pos = $.extend({}, $(ui.handle).offset(), {
+                            width: $(ui.handle).get(0).offsetWidth,
+                            height: $(ui.handle).get(0).offsetHeight
+                        });
+            var actualWidth = div.offsetWidth;
+
+            var tp = {left: pos.left + pos.width / 2 - actualWidth / 2}
+            $(div).offset(tp);
+
+            $(div).find(".tooltip-inner").text( ui.value );
+        }
+
+        windowResizeHandler();
+        $(window).resize(function() {
+            windowResizeHandler();
+        });
+
+        setTimeout(function() {
+            $('body').removeClass('notransition');
+
+            map = new google.maps.Map(document.getElementById('mapView'), options);
+            var styledMapType = new google.maps.StyledMapType(styles, {
+                name : 'Styled'
+            });
+
+            map.mapTypes.set('Styled', styledMapType);
+            map.setCenter(new google.maps.LatLng(35.2827524,-120.6596156));
+            map.setZoom(10);
+
+            if ($('#address').length > 0) {
+                newMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng(35.2827524,-120.6596156),
+                    map: map,
+                    icon: new google.maps.MarkerImage(
+                        'images/marker-new.png',
+                        null,
+                        null,
+                        // new google.maps.Point(0,0),
+                        null,
+                        new google.maps.Size(36, 36)
+                    ),
+                    draggable: true,
+                    animation: google.maps.Animation.DROP,
+                });
+
+                google.maps.event.addListener(newMarker, "mouseup", function(event) {
+                    var latitude = this.position.lat();
+                    var longitude = this.position.lng();
+                    $('#latitude').text(this.position.lat());
+                    $('#longitude').text(this.position.lng());
+                });
+            }
+
+            addMarkers(props, map);
+        }, 300);
+
+        if(!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+            $('body').addClass('no-touch');
+            isDevice = false;
+        }
+
+        // Header search icon transition
+        $('.search input').focus(function() {
+            $('.searchIcon').addClass('active');
+        });
+        $('.search input').blur(function() {
+            $('.searchIcon').removeClass('active');
+        });
+
+        // Notifications list items pulsate animation
+        $('.notifyList a').hover(
+            function() {
+                $(this).children('.pulse').addClass('pulsate');
+            },
+            function() {
+                $(this).children('.pulse').removeClass('pulsate');
+            }
+        );
+
+        // Exapnd left side navigation
+        var navExpanded = false;
+        $('.navHandler, .closeLeftSide').click(function() {
+            if(!navExpanded) {
+                $('.logo').addClass('expanded');
+                $('#leftSide').addClass('expanded');
+                if(windowWidth < 768) {
+                    $('.closeLeftSide').show();
+                }
+                $('.hasSub').addClass('hasSubActive');
+                $('.leftNav').addClass('bigNav');
+                if(windowWidth > 767) {
+                    $('.full').addClass('m-full');
+                }
+                windowResizeHandler();
+                navExpanded = true;
+            } else {
+                $('.logo').removeClass('expanded');
+                $('#leftSide').removeClass('expanded');
+                $('.closeLeftSide').hide();
+                $('.hasSub').removeClass('hasSubActive');
+                $('.bigNav').slimScroll({ destroy: true });
+                $('.leftNav').removeClass('bigNav');
+                $('.leftNav').css('overflow', 'visible');
+                $('.full').removeClass('m-full');
+                navExpanded = false;
+            }
+        });
+
+        // functionality for map manipulation icon on mobile devices
+        $('.mapHandler').click(function() {
+            if ($('#mapView').hasClass('mob-min') ||
+                $('#mapView').hasClass('mob-max') ||
+                $('#content').hasClass('mob-min') ||
+                $('#content').hasClass('mob-max')) {
+                    $('#mapView').toggleClass('mob-max');
+                    $('#content').toggleClass('mob-min');
+            } else {
+                $('#mapView').toggleClass('min');
+                $('#content').toggleClass('max');
+            }
+
+            setTimeout(function() {
+                var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+                var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+                var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+                $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+
+                var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+                var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+                var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+                $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+
+                if (map) {
+                    google.maps.event.trigger(map, 'resize');
+                }
+
+                $('.commentsFormWrapper').width($('#content').width());
+            }, 300);
+
+        });
+
+        // Expand left side sub navigation menus
+        $(document).on("click", '.hasSubActive', function() {
+            $(this).toggleClass('active');
+            $(this).children('ul').toggleClass('bigList');
+            $(this).children('a').children('.arrowRight').toggleClass('fa-angle-down');
+        });
+
+        if(isDevice) {
+            $('.hasSub').click(function() {
+                $('.leftNav ul li').not(this).removeClass('onTap');
+                $(this).toggleClass('onTap');
+            });
+        }
+
+        // functionality for custom dropdown select list
+        $('.dropdown-select li a').click(function() {
+            if (!($(this).parent().hasClass('disabled'))) {
+                $(this).prev().prop("checked", true);
+                $(this).parent().siblings().removeClass('active');
+                $(this).parent().addClass('active');
+                $(this).parent().parent().siblings('.dropdown-toggle').children('.dropdown-label').html($(this).text());
+            }
+        });
+
+        $('.priceSlider').slider({
+            range: true,
+            min: 0,
+            max: 2000000,
+            values: [500000, 1500000],
+            step: 10000,
+            slide: function(event, ui) {
+                $('.priceSlider .sliderTooltip .stLabel').html(
+                    '$' + ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
+                    ' <span class="fa fa-arrows-h"></span> ' +
+                    '$' + ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+                );
+                var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+                var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+                var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+                $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+            }
+        });
+        $('.priceSlider .sliderTooltip .stLabel').html(
+            '$' + $('.priceSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +
+            ' <span class="fa fa-arrows-h"></span> ' +
+            '$' + $('.priceSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+        );
+        var priceSliderRangeLeft = parseInt($('.priceSlider .ui-slider-range').css('left'));
+        var priceSliderRangeWidth = $('.priceSlider .ui-slider-range').width();
+        var priceSliderLeft = priceSliderRangeLeft + ( priceSliderRangeWidth / 2 ) - ( $('.priceSlider .sliderTooltip').width() / 2 );
+        $('.priceSlider .sliderTooltip').css('left', priceSliderLeft);
+
+        $('.areaSlider').slider({
+            range: true,
+            min: 0,
+            max: 20000,
+            values: [5000, 10000],
+            step: 10,
+            slide: function(event, ui) {
+                $('.areaSlider .sliderTooltip .stLabel').html(
+                    ui.values[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft' +
+                    ' <span class="fa fa-arrows-h"></span> ' +
+                    ui.values[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft'
+                );
+                var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+                var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+                var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+                $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+            }
+        });
+        $('.areaSlider .sliderTooltip .stLabel').html(
+            $('.areaSlider').slider('values', 0).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft' +
+            ' <span class="fa fa-arrows-h"></span> ' +
+            $('.areaSlider').slider('values', 1).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") + ' Sq Ft'
+        );
+        var areaSliderRangeLeft = parseInt($('.areaSlider .ui-slider-range').css('left'));
+        var areaSliderRangeWidth = $('.areaSlider .ui-slider-range').width();
+        var areaSliderLeft = areaSliderRangeLeft + ( areaSliderRangeWidth / 2 ) - ( $('.areaSlider .sliderTooltip').width() / 2 );
+        $('.areaSlider .sliderTooltip').css('left', areaSliderLeft);
+
+        $('.volume .btn-round-right').click(function() {
+            var currentVal = parseInt($(this).siblings('input').val());
+            if (currentVal < 10) {
+                $(this).siblings('input').val(currentVal + 1);
+            }
+        });
+        $('.volume .btn-round-left').click(function() {
+            var currentVal = parseInt($(this).siblings('input').val());
+            if (currentVal > 1) {
+                $(this).siblings('input').val(currentVal - 1);
+            }
+        });
+
+        $('.handleFilter').click(function() {
+            $('.filterForm').slideToggle(200);
+        });
+
+        //Enable swiping
+        $(".carousel-inner").swipe( {
+            swipeLeft:function(event, direction, distance, duration, fingerCount) {
+                $(this).parent().carousel('next');
+            },
+            swipeRight: function() {
+                $(this).parent().carousel('prev');
+            }
+        });
+
+        $(".carousel-inner .card").click(function() {
+            window.open($(this).attr('data-linkto'), '_self');
+        });
+
+        $('#content').scroll(function() {
+            if ($('.comments').length > 0) {
+                var visible = $('.comments').visible(true);
+                if (visible) {
+                    $('.commentsFormWrapper').addClass('active');
+                } else {
+                    $('.commentsFormWrapper').removeClass('active');
+                }
+            }
+        });
+
+        $('.btn').click(function() {
+            if ($(this).is('[data-toggle-class]')) {
+                $(this).toggleClass('active ' + $(this).attr('data-toggle-class'));
+            }
+        });
+
+        $('.tabsWidget .tab-scroll').slimScroll({
+            height: '235px',
+            size: '5px',
+            position: 'right',
+            color: '#939393',
+            alwaysVisible: false,
+            distance: '5px',
+            railVisible: false,
+            railColor: '#222',
+            railOpacity: 0.3,
+            wheelStep: 10,
+            allowPageScroll: true,
+            disableFadeOut: false
+        });
+
+        $('.progress-bar[data-toggle="tooltip"]').tooltip();
+        $('.tooltipsContainer .btn').tooltip();
+
+        $("#slider1").slider({
+            range: "min",
+            value: 50,
+            min: 1,
+            max: 100,
+            slide: repositionTooltip,
+            stop: repositionTooltip
+        });
+        $("#slider1 .ui-slider-handle:first").tooltip({ title: $("#slider1").slider("value"), trigger: "manual"}).tooltip("show");
+
+        $("#slider2").slider({
+            range: "max",
+            value: 70,
+            min: 1,
+            max: 100,
+            slide: repositionTooltip,
+            stop: repositionTooltip
+        });
+        $("#slider2 .ui-slider-handle:first").tooltip({ title: $("#slider2").slider("value"), trigger: "manual"}).tooltip("show");
+
+        $("#slider3").slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ 190, 350 ],
+            slide: repositionTooltip,
+            stop: repositionTooltip
+        });
+        $("#slider3 .ui-slider-handle:first").tooltip({ title: $("#slider3").slider("values", 0), trigger: "manual"}).tooltip("show");
+        $("#slider3 .ui-slider-handle:last").tooltip({ title: $("#slider3").slider("values", 1), trigger: "manual"}).tooltip("show");
+
+        $('#autocomplete').autocomplete({
+            source: ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java", "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"],
+            focus: function (event, ui) {
+                var label = ui.item.label;
+                var value = ui.item.value;
+                var me = $(this);
+                setTimeout(function() {
+                    me.val(value);
+                }, 1);
+            }
+        });
+
+        $('#tags').tagsInput({
+            'height': 'auto',
+            'width': '100%',
+            'defaultText': 'Add a tag',
+        });
+
+        $('#datepicker').datepicker();
+
+        // functionality for autocomplete address field
+        if ($('#address').length > 0) {
+            var address = document.getElementById('address');
+            var addressAuto = new google.maps.places.Autocomplete(address);
+
+            google.maps.event.addListener(addressAuto, 'place_changed', function() {
+                var place = addressAuto.getPlace();
+
+                if (!place.geometry) {
+                    return;
+                }
+                if (place.geometry.viewport) {
+                    map.fitBounds(place.geometry.viewport);
+                } else {
+                    map.setCenter(place.geometry.location);
+                }
+                newMarker.setPosition(place.geometry.location);
+                newMarker.setVisible(true);
+                $('#latitude').text(newMarker.getPosition().lat());
+                $('#longitude').text(newMarker.getPosition().lng());
+
+                return false;
+            });
+        }
+
+        $('input, textarea').placeholder();
+        </script>
     </body>
 </html>
