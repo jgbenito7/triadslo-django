@@ -7,6 +7,7 @@ from .models import Gallery
 from .models import Testimonial
 from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import ContactAgentForm
+from django.core.mail import send_mail
 
 def index(request):
     featured = Listing.objects.filter(featured='yes').order_by('order')[0:7];
@@ -45,15 +46,18 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
         form = ContactAgentForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['your_message']
+            sender = form.cleaned_data['your_name']
+            recipients = ['jgbenito7@gmail.com']
+            send_mail(subject, message, sender, recipients)
+
             # redirect to a new URL:
             return HttpResponseRedirect('/listings/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = ContactAgentForm()
-        return HttpResponseRedirect('/listings/')
 
 
     context = {'agents': agents, 'gallery':gallery, 'allListings':allListings, 'form':form}

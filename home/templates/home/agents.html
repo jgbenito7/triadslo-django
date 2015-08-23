@@ -39,16 +39,17 @@
       </div><br><br><br><br>
       <div class='home-wrapper' style='margin-top:240px; width:100%'>
         <div class='home-content'>
-          <!--<h2 class="osLight">Our Listings</h2>-->
           <div class='row pb40'>
           {% if agents %}
             {% for agent in agents %}
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="margin-top:10px;margin-bottom:10px;">
                 <div class="agent">
+                    {% if agent.picture %}
                     <a href="{% url "singleAgent" agent.id %}" class="agent-avatar">
                         <img src="/media/{{agent.picture}}" alt="John Smith">
                         <div class="ring"></div>
                     </a>
+                    {% endif %}
                     <div class="agent-name osLight font22"><b>{{agent.first}} {{agent.last}}</b></div>
                     <div class="osLight font16">{{agent.email}}</div>
                     <div class="osLight font16">{{agent.cell_number}}</div>

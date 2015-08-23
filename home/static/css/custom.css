@@ -85,6 +85,7 @@ h2.s-main{
   font-size:25px;
   font-weight:400;
 }
+/*
 
 .home-testim{
   margin-left:0px;
@@ -94,9 +95,12 @@ h2.s-main{
   margin-right:10px;
 }
 
+
 #home-testimonials .carousel-inner{
   width:100%;
 }
+
+*/
 
 .twitter{
   font-size:16px;
@@ -139,4 +143,8 @@ h2.s-main{
 .pc-avatar img{
   width: 150px !important;
   height: 150px !important;
+}
+
+.features{
+  margin-top:30px !important;
 }
