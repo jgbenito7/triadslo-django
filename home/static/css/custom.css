@@ -192,3 +192,13 @@ h2.s-main{
   margin-bottom:15px;
   background:#c6e4e3;
 }
+
+.video-js{
+  margin:auto;width:80% !important;
+  height:250px !important;
+  max-width:400px;
+}
+
+.vjs-poster{
+  background-size:cover !important;
+}
