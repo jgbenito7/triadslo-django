@@ -180,7 +180,15 @@ h2.s-main{
   border: none;
   height: 3px;
   width: 60px;
-  margin: 30px 0 !important;
+  margin: 30px 0;
   background: #e6eaed;
   display: block;
+}
+
+.home-hr{
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  margin-bottom:15px;
+  background:#c6e4e3;
 }
