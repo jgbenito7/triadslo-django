@@ -23,20 +23,9 @@
           </div>
         </div>
       </div>
-      <div class="home-header">
-          <img class='home-logo' src='/static/images/triad_white.png'></img>
-          <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
-          <div class="home-nav">
-              <ul>
-                  <li><a href="{% url 'index' %}">Home</a></li>
-                  <li><a href="{% url 'listings' %}">Properties</a></li>
-                  <li><a href="{% url 'agents' %}" >Meet The Team</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#signin">Community</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#signin">Resources</a></li>
-                  <li><a href="add.html" class="btn btn-green" style='display:none'>Contact Us</a></li>
-              </ul>
-          </div>
-      </div><br><br><br><br>
+      <!-- Include the header -->
+      {% include "home/header.html" %}
+      <br><br><br><br>
       <div class='home-wrapper' style='margin-top:240px; width:100%'>
         <div class='home-content'>
           <div class='row pb40'>
@@ -61,59 +50,8 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
-
-      <div class="home-footer">
-          <div class="home-wrapper">
-              <div class="row">
-                  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                      <div class="osLight footer-header">Company</div>
-                      <ul class="footer-nav pb20">
-                          <li><a href="#">About</a></li>
-                          <li><a href="#">Jobs</a></li>
-                          <li><a href="#">Press</a></li>
-                          <li><a href="blog.html">Blog</a></li>
-                          <li><a href="#">Help</a></li>
-                          <li><a href="#">Policies</a></li>
-                          <li><a href="#">Terms & Privacy</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                      <div class="osLight footer-header">Discover San Luis Obispo</div>
-                      <ul class="footer-nav pb20">
-                          <li><a target="_blank" href="http://visitslo.com/places-to-stay/">Places To Stay</a></li>
-                          <li><a target="_blank" href="http://www.weather.com/weather/today/l/San+Luis+Obispo+CA+USCA1000:1:US">Local Weather</a></li>
-                          <li><a target="_blank" href="http://www.visitsanluisobispocounty.com/events">Events Calendar</a></li>
-
-                      </ul>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                      <div class="osLight footer-header">Get in Touch</div>
-                      <ul class="footer-nav pb20">
-                          <li class="footer-phone"><span class="fa fa-phone"></span> 805.544.5500</li>
-                          <li class="footer-address osLight">
-                              <p>2436 Broad Street</p>
-                              <p>San Luis Obispo CA, 93401</p>
-                              <p>United States</p>
-                          </li>
-                          <li><a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-pinterest"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-linkedin"></span></a> </li>
-                      </ul>
-                  </div>
-                  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                      <div class="osLight footer-header">Subscribe to Our Newsletter</div>
-                      <form role="form">
-                          <div class="form-group">
-                              <input type="email" class="form-control" placeholder="Email Address">
-                          </div>
-                          <div class="form-group">
-                              <a href="#" class="btn btn-green btn-block">Subscribe</a>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-              <div class="copyright">Triad Real Estate Group<br> &copy; 2015</div>
-          </div>
-      </div>
+      <!-- Include the footer -->
+      {% include "home/footer.html" %}
     </body>
     <script src="/static/js/jquery-2.1.1.min.js"></script>
     <script src="/static/js/jquery-ui.min.js"></script>

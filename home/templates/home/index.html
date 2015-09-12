@@ -83,34 +83,52 @@
                     </div>
                 </form>
             </div>
-            <div class="home-header">
-                <img class='home-logo' src='/static/images/triad_white.png'></img>
-                <a href="#" class="home-navHandler visible-xs"><span class="fa fa-bars"></span></a>
-                <div class="home-nav">
-                    <ul>
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li><a href="{% url 'listings' %}">Properties</a></li>
-                        <li><a href="{% url 'agents' %}">Meet The Team</a></li>
-                        <li>
-                          <a>Community</a>
-                          <!--<ul class='nav-dropdown'>
-                            <li>A</li>
-                            <li>A</li>
-                            <li>A</li>
-                          </ul>-->
-                        </li>
-                        <li><a href="#" data-toggle="modal" data-target="#signin">Resources</a></li>
-                        <li style='display:none'><a href="add.html" class="btn btn-green">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Include the header -->
+            {% include "home/header.html" %}
         </div>
-        <div class="highlight">
-            <div class="h-title osLight">About Us</div>
-            <div class="h-text osLight" style="margin-bottom:20px;">"Triad Real Estate Group is a full service Professional Real Estate Brokerage covering
-              all of California while focusing on the Central Coast. We work in all aspects of the real estate industry including
-              Residential, Commercial, Land, Income Property and Development. We have an experienced team of Real Estate Brokers,
-              Transaction Coordinators, Contractors, Short Sale and REO Specialists ready to assist."</div>
+        <div class="highlight" style='background:#333'>
+          <div class='row'>
+            <div class='col-md-4'>
+              <div class="h-title osLight">Follow Us</div>
+              <div id="home-testimonials" class="carousel slide carousel-wb mb60" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#home-testimonials" data-slide-to="0" class="active"></li>
+                    <!--<li data-target="#home-testimonials" data-slide-to="1"></li>-->
+                  </ol>
+                <div class="carousel-inner">
+                  <div class="item active">
+                      <div class="home-testim" style='margin:0;'>
+                          <div class="home-testim-text" style='color:white'>"Check out our website for a sneak peek at our
+                            new beautiful cabin listing coming soon! 58003 Summit Drive-$474,000 #triadslo"</div>
+                          <div class="home-testim-name" style='color:white' >@TriadREGroup</div>
+                      </div>
+                  </div>
+                  <!--<div class="item">
+                      <div class="home-testim" style='margin:0;'>
+                          <div class="home-testim-text" style='color:white'>"Triad Real Estate Group is a full service Professional
+                            Real Estate Brokerage covering all of California while"</div>
+                          <div class="home-testim-name" style='color:white'>@TriadREGroup</div>
+                      </div>
+                  </div>-->
+                </div>
+              </div>
+              <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-pinterest"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-linkedin"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-houzz"></span></a>
+            </div>
+            <div class='col-md-4 borders'>
+              <div class="h-title osLight">About Triad</div>
+              <div class="h-text osLight" style="margin-bottom:20px;">"Triad Real Estate Group is a full service Professional Real Estate Brokerage covering
+                all of California while focusing on the Central Coast. We work in all aspects of the real estate industry including
+                Residential, Commercial, Land, Income Property and Development. We have an experienced team of Real Estate Brokers,
+                Transaction Coordinators, Contractors, Short Sale and REO Specialists ready to assist."</div>
+            </div>
+            <div class='col-md-4'>
+              <div class="h-title osLight">Featured Video</div>
+              <div class='play-button-wrap'>
+                <i class='fa fa-play-circle-o'></i>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Content -->
@@ -206,62 +224,8 @@
             </div>
         </div>
 
-
-
-        <!-- Footer -->
-
-        <div class="home-footer">
-            <div class="home-wrapper">
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                        <div class="osLight footer-header">Company</div>
-                        <ul class="footer-nav pb20">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Jobs</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Policies</a></li>
-                            <li><a href="#">Terms & Privacy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                        <div class="osLight footer-header">Discover San Luis Obispo</div>
-                        <ul class="footer-nav pb20">
-                            <li><a target="_blank" href="http://visitslo.com/places-to-stay/">Places To Stay</a></li>
-                            <li><a target="_blank" href="http://www.weather.com/weather/today/l/San+Luis+Obispo+CA+USCA1000:1:US">Local Weather</a></li>
-                            <li><a target="_blank" href="http://www.visitsanluisobispocounty.com/events">Events Calendar</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <div class="osLight footer-header">Get in Touch</div>
-                        <ul class="footer-nav pb20">
-                            <li class="footer-phone"><span class="fa fa-phone"></span> 805.544.5500</li>
-                            <li class="footer-phone"><span class="fa fa-envelope-o"></span> info@triadslo.com</li>
-                            <li class="footer-address osLight">
-                                <p>2436 Broad Street</p>
-                                <p>San Luis Obispo CA, 93401</p>
-                                <p>United States</p>
-                            </li>
-                            <li><a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-facebook"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-twitter"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-pinterest"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-linkedin"></span></a> <a href="#" class="btn btn-sm btn-icon btn-round btn-o btn-white"><span class="fa fa-houzz"></span></a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <div class="osLight footer-header">Subscribe to Our Newsletter</div>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email Address">
-                            </div>
-                            <div class="form-group">
-                                <a href="#" class="btn btn-green btn-block">Subscribe</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="copyright">Triad Real Estate Group<br> &copy; 2015</div>
-            </div>
-        </div>
+        <!-- Include the footer -->
+        {% include "home/footer.html" %}
 
         <script src="/static/js/jquery-2.1.1.min.js"></script>
         <script src="/static/js/jquery-ui.min.js"></script>

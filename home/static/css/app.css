@@ -5180,43 +5180,11 @@ blockquote {
         -o-transition: none;
         transition: none;
     }
-    #header {
-        background-color: #0eaaa6;
-        height: 50px;
-    }
+
     .search {
         display: none;
     }
-    .logo, .logo.expanded {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 80px;
-        height: 50px;
-        margin-left: -40px;
-    }
-    .logo a, .logo.expanded a {
-        width: 70px;
-        height: 50px;
-    }
-    .logo a span.marker, .logo.expanded a span.marker {
-        left: 0;
-        top: 10px;
-        -webkit-transition: none;
-        -o-transition: none;
-        transition: none;
-    }
-    .no-touch .logo a:hover span.marker, .no-touch .logo.expanded a:hover span.marker {
-        color: rgba(255, 255, 255, 1);
-        top: 10px;
-    }
-    .logo a span.logoText, .logo.expanded a span.logoText {
-        top: 14px;
-        left: 34px;
-    }
-    .no-touch .logo a:hover span.logoText, .no-touch .logo.expanded a:hover span.logoText {
-        top: 14px;
-    }
+
     .mobAvatar {
         display: block;
     }

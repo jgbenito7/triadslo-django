@@ -24,6 +24,12 @@ def listings(request):
     context = {'listings':listings, 'gallery':gallery}
     return render(request, 'home/listings.html', context)
 
+def comingSoon(request):
+    listings = Listing.objects.filter(published='yes',status='coming_soon').order_by('order')[:];
+    gallery = Gallery.objects.order_by('title')[:];
+    context = {'listings':listings, 'gallery':gallery}
+    return render(request, 'home/listings.html', context)
+
 def agents(request):
     agents = Agent.objects.order_by('order')[:]
     context = {'agents':agents}
@@ -62,3 +68,6 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
 
     context = {'agents': agents, 'gallery':gallery, 'allListings':allListings, 'form':form}
     return render(request, 'home/profile.html', context)
+
+def contactus(request):
+    return render(request, 'home/contactus.html')

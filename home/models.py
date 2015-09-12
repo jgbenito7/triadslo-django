@@ -20,7 +20,8 @@ YES_NO_HIDE = (('yes','yes'),('no','no'),('hide','hide'))
 STATUS = (
     ('active','active'),
     ('pending','pending'),
-    ('sold','sold')
+    ('sold','sold'),
+    ('coming_soon','coming_soon')
 )
 
 class MyPreferences(Preferences):
