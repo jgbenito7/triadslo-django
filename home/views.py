@@ -8,6 +8,7 @@ from .models import Testimonial
 from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import ContactAgentForm
 from django.core.mail import send_mail
+from TwitterAPI import TwitterAPI
 
 def index(request):
     featured = Listing.objects.filter(featured='yes').order_by('order')[0:7];
@@ -15,7 +16,13 @@ def index(request):
     agents = Agent.objects.order_by('order')[:]
     gallery = Gallery.objects.order_by('title')[:]
     testimonials = Testimonial.objects.order_by('order')[:]
-    context = {'agents': agents, 'fourAgents':fourAgents, 'featured':featured, 'gallery':gallery, 'testimonials':testimonials}
+    api = TwitterAPI("Z6F4io8VZiTx60XdtMU4EM0kf", "93QSIFfLsj3kewcEW6SjO0Jk1sqyphfGZxFIlmb9ktePXylIW5", "2463659724-xHhmNvIwBfjLA8SRdePR07vzWKUCTVCLmG6ErEK", "ZRR1GssUBUiPtQNsJMHhdHT5OzMEBxwaxkF4Vh4G50LW8")
+    r = api.request('statuses/user_timeline',{'count':1})
+    twitterText = ""
+    for item in r.get_iterator():
+        if 'text' in item:
+            twitterText =  item['text']
+    context = {'agents': agents, 'fourAgents':fourAgents, 'featured':featured, 'gallery':gallery, 'testimonials':testimonials, 'twitterText':twitterText}
     return render(request, 'home/index.html', context)
 
 def listings(request):
