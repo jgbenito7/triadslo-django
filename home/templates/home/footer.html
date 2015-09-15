@@ -19,7 +19,6 @@
                     <li><a target="_blank" href="http://visitslo.com/places-to-stay/">Places To Stay</a></li>
                     <li><a target="_blank" href="http://www.weather.com/weather/today/l/San+Luis+Obispo+CA+USCA1000:1:US">Local Weather</a></li>
                     <li><a target="_blank" href="http://www.visitsanluisobispocounty.com/events">Events Calendar</a></li>
-
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -43,16 +42,17 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                 <div class="osLight footer-header">Visit Us In Our Office</div>
-                <form role="form">
+                <form action="http://maps.google.com/maps" method="get" target="_blank">
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Enter Your Location">
+                        <input name="saddr" class="form-control" placeholder="Enter Your Location">
+                        <input type="hidden" name="daddr" value="2436 Broad St., San Luis Obispo, CA" />
                     </div>
                     <div class="form-group">
-                        <a href="#" class="btn btn-green btn-block">Get Directions</a>
+                        <input href="#" type="submit" value="Get Directions" class="btn btn-green btn-block">
                     </div>
                 </form>
             </div>
         </div>
-        <div class="copyright">Triad Real Estate Group<br> &copy; 2015</div>
+        <div class="copyright">Triad Real Estate Group<br> &copy; 2015 |  All Rights Reserved  |  CALBRE #01953757</div>
     </div>
 </div>

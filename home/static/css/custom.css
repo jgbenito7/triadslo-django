@@ -64,8 +64,16 @@ h2.s-main{
 }
 
 .btn-green:hover{
-  background:#397491 !important;
+  background:#333 !important;
 }
+ .btn-green:visited{
+   background:#808080;
+ }
+
+ .btn-green:focus{
+  background:#808080;
+ }
+
 .s-menu-item:hover{
   background:#397491 !important;
 }
@@ -201,4 +209,47 @@ h2.s-main{
 
 .vjs-poster{
   background-size:cover !important;
+}
+.singleTop ul.features{
+  margin-bottom:20px;
+}
+.singleTop ul.features li{
+  width:25%;
+}
+
+h1.pageTitle{
+  font-size:24px;
+}
+
+.singleTop .address{
+  font-size:16px;
+  font-weight:600;
+  color:rgb(100,100,100);
+  margin-top:5px;
+}
+
+#content h3{
+  font-size:17px;
+}
+
+.description p{
+  font-size:16px;
+}
+
+.amItem{
+  font-size:16px;
+}
+
+.agentAvatar .contactBtn{
+  margin-bottom:10px;
+  margin-top:20px;
+
+}
+
+.summaryItem{
+  margin-bottom:0px;
+}
+
+.cap{
+  text-transform: capitalize;
 }

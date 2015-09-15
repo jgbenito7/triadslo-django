@@ -123,28 +123,50 @@
                     </script>
                     <div class="summary">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="summaryItem">
                                     <h1 class="pageTitle">{{listing.title}}</h1>
                                     <div class="address"><span class="icon-pointer"></span> {{listing.title}}</div>
+                                    {% if listing.mls %}
+                                    <div class="address">MLS #: {{listing.mls}}</div>
+                                    {% endif %}
+                                    <div class="address cap">Listing Status: {{listing.status}}</div>
                                     <div class='wrap-right'>
                                       <h1 class='big-price' id='cost'></h1>
                                     </div>
                                     <div class="clearfix"></div>
+
                                     <ul class="features">
                                         <li><span class="fa fa-moon-o"></span><div>{{listing.bedrooms}} Bedrooms</div></li>
                                         <li><span class="icon-drop"></span><div>{{listing.bathrooms}} Bathrooms</div></li>
                                         <li><span class="icon-frame"></span><div>{{listing.square_feet}} Sq Ft</div></li>
+                                        <li><span class="icon-size-fullscreen"></span><div>{{listing.acres}} Acres</div></li>
                                     </ul>
+                                    <div class='row' style='margin-bottom:20px;'>
+                                      {% if listing.virtual_tour and listing.request_button == 'yes' %}
+                                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <div class="agentAvatar summaryItem">
+                                            <a href="{{listing.virtual_tour}}" target="_blank" class="btn btn-lg btn-round btn-green contactBtn">Virtual Tour</a>
+                                        </div>
+                                      </div>
+                                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                          <div class="agentAvatar summaryItem">
+                                              <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">Request Showing</a>
+                                          </div>
+                                      </div>
+                                      {% elif listing.virtual_tour == "" and listing.request_button == 'yes' %}
+                                          <div class="agentAvatar summaryItem">
+                                              <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn" style='width:300px;'>Request Showing</a>
+                                          </div>
+
+                                      {% elif listing.virtual_tour and listing.request_button == 'no' %}
+                                          <div class="agentAvatar summaryItem">
+                                            <a href="{{listing.virtual_tour}}" target="_blank" class="btn btn-lg btn-round btn-green contactBtn" style='width:300px;' >Virtual Tour</a>
+                                          </div>
+                                      {% endif %}
+
+                                    </div>
                                     <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                <div class="agentAvatar summaryItem">
-                                     <div class="clearfix"></div>
-                                    <img class="avatar agentAvatarImg" src="/static/images/avatar-2.png" alt="avatar">
-                                    <div class="agentName">Jane Smith</div>
-                                    <a data-toggle="modal" href="#contactAgent" class="btn btn-lg btn-round btn-green contactBtn">Contact Agent</a>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +251,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="contactLabel">Contact Agent</h4>
+                        <h4 class="modal-title" id="contactLabel">Request Showing</h4>
                     </div>
                     <div class="modal-body">
                         <form class="contactForm">
@@ -240,7 +262,10 @@
                                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
                                     <input type="text" placeholder="Email" class="form-control">
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cfItem">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
+                                    <input type="text" placeholder="Phone Number" class="form-control">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
                                     <input type="text" placeholder="Subject" class="form-control">
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cfItem">

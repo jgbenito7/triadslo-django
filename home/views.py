@@ -60,13 +60,13 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
         # check whether it's valid:
         if form.is_valid():
             subject = form.cleaned_data['subject']
-            message = form.cleaned_data['your_message']
+            message = 'From: ' + form.cleaned_data['your_name'] + '\n' + '\n' + 'Email: ' + form.cleaned_data['your_email'] + '\n' + '\n' + 'Phone Number: ' + form.cleaned_data['your_phone'] + '\n' + '\n' + 'Message: ' + '\n' + '\n' + form.cleaned_data['your_message']
             sender = form.cleaned_data['your_name']
-            recipients = ['jgbenito7@gmail.com']
+            recipients = [form.cleaned_data['agent_email']]
             send_mail(subject, message, sender, recipients)
 
             # redirect to a new URL:
-            return HttpResponseRedirect('/listings/')
+            return HttpResponseRedirect('/agents/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
