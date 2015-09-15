@@ -353,6 +353,7 @@
             bedrooms : '{{listing.bedrooms}}',
             bathrooms : '{{listing.bathrooms}}',
             area : '{{listing.square_feet}} Sq Ft',
+            link : '{% url "singleListing" listing.id %}',
             position : {
                 lat : {{listing.latitude}},
                 lng : {{listing.longitude}}
@@ -439,7 +440,7 @@
                                         '<div class="clearfix"></div>' +
                                         '<div class="infoButtons">' +
                                             '<a class="btn btn-sm btn-round btn-gray btn-o closeInfo">Close</a>' +
-                                            '<a href="" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
+                                            '<a href="'+ prop.link +'" class="btn btn-sm btn-round btn-green viewInfo">View</a>' +
                                         '</div>' +
                                      '</div>';
 
