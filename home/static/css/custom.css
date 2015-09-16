@@ -14,7 +14,7 @@
   font-family: Maven Pro;
 }
 
-body{
+*{
   font-family: Maven Pro;
 }
 
@@ -49,7 +49,7 @@ body{
 
 .slide-img{
   width:100%;
-  height:400px;
+  height:420px !important;
 }
 
 .highlight, .btn-green{
@@ -222,22 +222,22 @@ h1.pageTitle{
 }
 
 .singleTop .address{
-  font-size:16px;
+  font-size:18px;
   font-weight:600;
   color:rgb(100,100,100);
   margin-top:5px;
 }
 
 #content h3{
-  font-size:17px;
+  font-size:19px;
 }
 
 .description p{
-  font-size:16px;
+  font-size:18px;
 }
 
 .amItem{
-  font-size:16px;
+  font-size:18px;
 }
 
 .agentAvatar .contactBtn{
@@ -250,6 +250,17 @@ h1.pageTitle{
   margin-bottom:0px;
 }
 
-.cap{
-  text-transform: capitalize;
+.cap{ text-transform: capitalize; }
+
+
+.green-text{
+  color:#0eaaa6;
+}
+
+.yellow-text{
+  color:#eab134;
+}
+
+.red-text{
+  color:#ea3d36;
 }

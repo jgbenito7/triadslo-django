@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>Triad Real Estate Group</title>
-
+        <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
         <link href="/static/css/font-awesome.css" rel="stylesheet">
         <link href="/static/css/simple-line-icons.css" rel="stylesheet">
         <link href="/static/css/jquery-ui.css" rel="stylesheet">
@@ -125,12 +125,21 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="summaryItem">
+                                  <div class='col-xs-9'>
                                     <h1 class="pageTitle">{{listing.title}}</h1>
                                     <div class="address"><span class="icon-pointer"></span> {{listing.title}}</div>
                                     {% if listing.mls %}
                                     <div class="address">MLS #: {{listing.mls}}</div>
                                     {% endif %}
-                                    <div class="address cap">Listing Status: {{listing.status}}</div>
+                                    {% if listing.status == 'active' %}
+                                    <div class="address cap">Listing Status: <span class='green-text'>{{listing.status}}</span></div>
+                                    {% elif listing.status == 'pending' %}
+                                    <div class="address cap">Listing Status: <span class='yellow-text'>{{listing.status}}</span></div>
+                                    {% else %}
+                                    <div class="address cap">Listing Status: <span class='red-text'>{{listing.status}}</span></div>
+                                    {% endif %}
+                                  </div>
+
                                     <div class='wrap-right'>
                                       <h1 class='big-price' id='cost'></h1>
                                     </div>
