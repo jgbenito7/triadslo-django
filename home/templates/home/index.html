@@ -79,7 +79,7 @@
                         <div class="checkbox custom-checkbox"><label><input type="checkbox"><span class="fa fa-check"></span> For Sale</label></div>
                     </div>
                     <div class="form-group">
-                        <a href="explore.html" class="btn btn-green">Search</a>
+                        <a href="explore" class="btn btn-green">Search</a>
                         <a href="#" class="btn btn-o btn-white pull-right visible-xs" id="advanced">Advanced Search <span class="fa fa-angle-up"></span></a>
                     </div>
                 </form>
@@ -158,7 +158,13 @@
                                         <img class="blur" src="/media/{{photo.image}}" alt="Modern Residence in New York">
                                         <div class="opac"></div>
                                         <div class="priceCap osLight"><span>${{listing.cost}}</span></div>
-                                        <div class="figType">{{listing.status}}</div>
+                                        {% if listing.status == "active" %}
+                                          <div class="figType green-back">{{listing.status}}</div>
+                                        {% elif listing.status == "pending" %}
+                                          <div class="figType yellow-back">{{listing.status}}</div>
+                                        {% else %}
+                                          <div class="figType red-back">{{listing.status}}</div>
+                                        {% endif %}
                                         <h3 class="osLight">{{album.title}}</h3>
                                         <div class="address">{{listing.title}}</div>
                                     </div>

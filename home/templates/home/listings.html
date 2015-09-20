@@ -42,7 +42,13 @@
                             <div class="fig">
                                 <img src="/media/{{photo.image}}" alt="image">
                                 <div class="priceCap"><span>${{listing.cost}}</span></div>
-                                <div class="figType">{{listing.status}}</div>
+                                {% if listing.status == "active" %}
+                                  <div class="figType green-back">{{listing.status}}</div>
+                                {% elif listing.status == "pending" %}
+                                  <div class="figType yellow-back">{{listing.status}}</div>
+                                {% else %}
+                                  <div class="figType red-back">{{listing.status}}</div>
+                                {% endif %}
                                 <div class="figCap">
                                     <h3>{{album.title}}</h3>
                                     <div class="address">{{listing.title}}</div>

@@ -102,17 +102,14 @@ def contactus(request):
         # create a form instance and populate it with data from the request:
         form = ContactUsForm(request.POST)
         # check whether it's valid:
-        print "Post"
         if form.is_valid():
             subject = "Message From www.triadslo.com"
             message = 'From: ' + form.cleaned_data['your_first_name'] + " " + form.cleaned_data['your_last_name'] + '\n' + '\n' + 'Email: ' + form.cleaned_data['your_email'] + '\n' + '\n' + 'Subject: ' + form.cleaned_data['subject']+ '\n' + '\n' + 'Phone Number: ' + form.cleaned_data['your_phone'] + '\n' + '\n' + 'Message: ' + '\n' + '\n' + form.cleaned_data['your_message']
             sender = form.cleaned_data['your_first_name'] + " " + form.cleaned_data['your_last_name']
             recipients = ["info@triadslo.com"]
             send_mail(subject, message, sender, recipients)
-            print "Valid"
             # redirect to a new URL:
             return HttpResponseRedirect('/contactus/')
-        print "Not Valid"
     # if a GET (or any other method) we'll create a blank form
     else:
         form = ContactUsForm()
