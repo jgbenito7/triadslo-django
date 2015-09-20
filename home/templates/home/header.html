@@ -6,16 +6,32 @@
             <li><a href="{% url 'index' %}">Home</a></li>
             <li><a href="{% url 'listings' %}">Properties</a></li>
             <li><a href="{% url 'agents' %}">Meet The Team</a></li>
-            <li>
+            <li class='drop'>
               <a>Community</a>
-              <!--<ul class='nav-dropdown'>
-                <li>A</li>
-                <li>A</li>
-                <li>A</li>
-              </ul>-->
+              <ul class='nav-dropdown'>
+                <li><a href="http://www.weather.com/weather/today/l/San+Luis+Obispo+CA+USCA1000:1:US">Local Weather</a></li>
+                <li><a href="http://www.visitsanluisobispocounty.com/events">Events Calendar</a></li>
+              </ul>
             </li>
-            <li><a href="#">Resources</a></li>
+            <li class='drop'>
+              <a>Resources</a>
+              <ul class='nav-dropdown'>
+                <li>
+                  <a href="http://www.mortgagecalculator.org/" target="_blank">MORTGAGE CALCULATOR</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="{% url 'contactus' %}">Contact Us</a></li>
         </ul>
     </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $(".drop").hover(function(){
+      $(this).find(".nav-dropdown").fadeIn(100);
+    }, function(){
+      $(this).find(".nav-dropdown").fadeOut(100);
+    });
+  });
+</script>

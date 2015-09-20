@@ -5,7 +5,7 @@
 
 @media (max-width:768px){
   .home-nav ul li a{
-    font-size: 10px !important;
+    font-size: 7px !important;
   }
 }
 
@@ -63,7 +63,7 @@ h2.s-main{
   color:rgb(145, 150, 147);
 }
 
-.btn-green:hover{
+.btn-green:hover, .btn-o.btn-green:hover{
   background:#333 !important;
 }
  .btn-green:visited{
@@ -73,6 +73,19 @@ h2.s-main{
  .btn-green:focus{
   background:#808080;
  }
+
+.btn-o.btn-green{
+  border-color:#808080;
+  color:#808080;
+}
+
+  .btn-o.btn-green:visited{
+    border-color:#808080;
+  }
+
+  .btn-o.btn-green:focus{
+   background:transparent;
+  }
 
 .s-menu-item:hover{
   background:#397491 !important;
@@ -243,7 +256,7 @@ h1.pageTitle{
 .agentAvatar .contactBtn{
   margin-bottom:10px;
   margin-top:20px;
-
+  width:60%;
 }
 
 .summaryItem{
@@ -263,4 +276,21 @@ h1.pageTitle{
 
 .red-text{
   color:#ea3d36;
+}
+
+@media (max-width:991px){
+  .margin-top{
+    margin-top: 50px;
+  }
+}
+
+.nav-dropdown{
+  float:none !important;
+  position: absolute;
+  display:none;
+}
+
+.nav-dropdown li{
+  float:none !important;
+  margin-left:0px !important;
 }

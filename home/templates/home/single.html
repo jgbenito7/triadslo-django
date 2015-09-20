@@ -250,7 +250,7 @@
                         {% endif %}
                     </div>
                 </div>
-                {% endfor %}
+
                 </div>
             </div>
         </div>
@@ -262,35 +262,38 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         <h4 class="modal-title" id="contactLabel">Request Showing</h4>
                     </div>
-                    <div class="modal-body">
-                        <form class="contactForm">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
-                                    <input type="text" placeholder="Name" class="form-control">
-                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
-                                    <input type="text" placeholder="Email" class="form-control">
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
-                                    <input type="text" placeholder="Phone Number" class="form-control">
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
-                                    <input type="text" placeholder="Subject" class="form-control">
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cfItem">
-                                    <textarea placeholder="Message" rows="3" class="form-control"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" data-dismiss="modal" class="btn btn-round btn-o btn-gray">Close</a>
-                        <a href="#" class="btn btn-round btn-green">Send message</a>
-                    </div>
+
+                    <form class="contactForm" action="/single-listing/{{listing.id}}/" role="form" method="post">
+                      {% csrf_token %}
+                      <div class="modal-body">
+                          <div class="row">
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
+                                  <input id='name' name="your_name" type="text" placeholder="Your Name" class="form-control">
+                               </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
+                                  <input id="email" name="your_email" type="text" placeholder="Your Email" class="form-control">
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
+                                  <input id="phone" name="your_phone" type="text" placeholder="Your Phone Number" class="form-control">
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cfItem">
+                                  <input id="subject" name="subject" type="text" placeholder="Subject" class="form-control">
+                                  <input style='display:none' name="listing_name" type="text" class="form-control" id="listing_name" value="{{listing.title}}">
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cfItem">
+                                  <textarea id="message" name="your_message" placeholder="Type your message..." rows="3" class="form-control"></textarea>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <a href="#" data-dismiss="modal" class="btn btn-round btn-o btn-gray">Close</a>
+                          <button type='submit' value='OK' class="btn btn-round btn-green">Send message</button>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>
-
+{% endfor %}
 
         <script src="/static/js/jquery-ui.min.js"></script>
         <script src="/static/js/jquery-ui-touch-punch.js"></script>

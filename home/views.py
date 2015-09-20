@@ -7,6 +7,8 @@ from .models import Gallery
 from .models import Testimonial
 from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import ContactAgentForm
+from .forms import RequestShowingForm
+from .forms import ContactUsForm
 from django.core.mail import send_mail
 from TwitterAPI import TwitterAPI
 
@@ -46,7 +48,25 @@ def singleListing(request, listing_id = None, *args, **kwargs):
     listings = Listing.objects.filter(id=listing_id).order_by('order')[:]
     allListings = Listing.objects.filter(published='yes').order_by('order')[:];
     gallery = Gallery.objects.order_by('title')[:];
-    context = {'listings': listings,'gallery':gallery, 'allListings':allListings}
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = RequestShowingForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            subject = "Request For Showing: " + form.cleaned_data['listing_name']
+            message = 'From: ' + form.cleaned_data['your_name'] + '\n' + '\n' + 'Email: ' + form.cleaned_data['your_email'] + '\n' + '\n' + 'Phone Number: ' + form.cleaned_data['your_phone'] + '\n' + '\n' + 'Message: ' + '\n' + '\n' + form.cleaned_data['your_message']
+            sender = form.cleaned_data['your_name']
+            recipients = ["info@triadslo.com"]
+            send_mail(subject, message, sender, recipients)
+
+            # redirect to a new URL:
+            return HttpResponseRedirect('/listings/')
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = RequestShowingForm()
+
+    context = {'listings': listings,'gallery':gallery, 'allListings':allListings, 'form':form}
     return render(request, 'home/single.html',context)
 
 def singleAgent(request, agent_id = None, *args, **kwargs):
@@ -77,4 +97,26 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
     return render(request, 'home/profile.html', context)
 
 def contactus(request):
-    return render(request, 'home/contactus.html')
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = ContactUsForm(request.POST)
+        # check whether it's valid:
+        print "Post"
+        if form.is_valid():
+            subject = "Message From www.triadslo.com"
+            message = 'From: ' + form.cleaned_data['your_first_name'] + " " + form.cleaned_data['your_last_name'] + '\n' + '\n' + 'Email: ' + form.cleaned_data['your_email'] + '\n' + '\n' + 'Subject: ' + form.cleaned_data['subject']+ '\n' + '\n' + 'Phone Number: ' + form.cleaned_data['your_phone'] + '\n' + '\n' + 'Message: ' + '\n' + '\n' + form.cleaned_data['your_message']
+            sender = form.cleaned_data['your_first_name'] + " " + form.cleaned_data['your_last_name']
+            recipients = ["info@triadslo.com"]
+            send_mail(subject, message, sender, recipients)
+            print "Valid"
+            # redirect to a new URL:
+            return HttpResponseRedirect('/contactus/')
+        print "Not Valid"
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = ContactUsForm()
+
+
+    context = {'form':form}
+    return render(request, 'home/contactus.html',context)

@@ -12,6 +12,7 @@
         <link href="/static/css/bootstrap.css" rel="stylesheet">
         <link href="/static/css/app.css" rel="stylesheet">
         <link href="/static/css/custom.css" rel="stylesheet">
+        <script src="/static/js/jquery-2.1.1.min.js"></script>
     </head>
     <body class="notransition no-hidden">
       <div style="position:absolute;top:0;height:300px;width:100%;background:rgb(100,100,100)">
@@ -30,46 +31,47 @@
           <div class='col-md-7'>
             <div class="home-title grey font22">Contact Form</div>
             <hr class='fat-hr'>
-            <form class='form-horizontal'>
+            <form class="form-horizontal" action="/contactus/" role="form" method="post">
+              {% csrf_token %}
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>First Name</label>
                 <div class='col-sm-10'>
-                  <input type='name' class='form-control' placeholder="First Name">
+                  <input id="your_first_name" name="your_first_name" type='name' class='form-control' placeholder="First Name">
                 </div>
               </div>
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>Last Name</label>
                 <div class='col-sm-10'>
-                  <input type='name' class='form-control' placeholder="Last Name">
+                  <input id="your_last_name" name="your_last_name" type='name' class='form-control' placeholder="Last Name">
                 </div>
               </div>
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>Email Address</label>
                 <div class='col-sm-10'>
-                  <input type='email' class='form-control' placeholder="Email Address">
+                  <input id="your_email" name="your_email" type='email' class='form-control' placeholder="Email Address">
                 </div>
               </div>
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>Telephone</label>
                 <div class='col-sm-10'>
-                  <input type='name' class='form-control' placeholder="Telephone">
+                  <input id="your_phone" name="your_phone" type='name' class='form-control' placeholder="Telephone">
                 </div>
               </div>
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>Email Subject</label>
                 <div class='col-sm-10'>
-                  <input type='name' class='form-control' placeholder="Email Subject">
+                  <input id="submit" name="subject" type='name' class='form-control' placeholder="Email Subject">
                 </div>
               </div>
               <div class='form-group'>
                 <label for='inputEmail' class='col-sm-2 control-label'>Email Message</label>
                 <div class='col-sm-10'>
-                  <textarea class='form-control' rows='5' placeholder="Enter your message..."></textarea>
+                  <textarea id="your_message" name="your_message" class='form-control' rows='5' placeholder="Enter your message..."></textarea>
                 </div>
               </div>
               <div class='form-group'>
                 <div class='col-sm-offset-2 col-sm-10'>
-                  <a href='#' class='btn btn-o btn-green isThemeBtn'>Submit</a>
+                  <button type='submit' value='OK' class='btn btn-o btn-green isThemeBtn'>Submit</button>
                 </div>
               </div>
             </form>
@@ -84,7 +86,7 @@
       {% include "home/footer.html" %}
 
     </body>
-    <script src="/static/js/jquery-2.1.1.min.js"></script>
+
     <script src="/static/js/jquery-ui.min.js"></script>
     <script src="/static/js/jquery-ui-touch-punch.js"></script>
     <script src="/static/js/jquery.placeholder.js"></script>
