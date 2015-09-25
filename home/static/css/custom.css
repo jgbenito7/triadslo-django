@@ -128,7 +128,7 @@ h2.s-main{
 
 .agent-avatar img, .ring{
   width:200px !important;
-  height:200px !important;
+  height:225px !important;
   border-radius:0 !important;
 }
 
@@ -305,4 +305,14 @@ h1.pageTitle{
 .nav-dropdown li{
   float:none !important;
   margin-left:0px !important;
+}
+
+#frame1{
+  width:100%;
+  height:1100px;
+}
+
+#frame2{
+  width:100%;
+  height:900px;
 }

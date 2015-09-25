@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^single-listing/(?P<prop_id>\d+)/$', views.singleListing, name='singleListing'),
     url(r'^single-agent/(?P<agent_id>\d+)/$', views.singleAgent, name='singleAgent'),
     url(r'^contactus/', views.contactus, name='contactus'),
+    url(r'^search-listings/', views.searchListings, name='searchListings'),
+    url(r'^search-forclosures/', views.searchForclosures, name='searchForclosures'),
 ]

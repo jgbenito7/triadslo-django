@@ -117,3 +117,9 @@ def contactus(request):
 
     context = {'form':form}
     return render(request, 'home/contactus.html',context)
+
+def searchListings(request):
+    return render(request, 'home/searchListings.html')
+
+def searchForclosures(request):
+    return render(request, 'home/searchForclosures.html')

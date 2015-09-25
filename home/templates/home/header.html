@@ -4,7 +4,14 @@
     <div class="home-nav">
         <ul>
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'listings' %}">Properties</a></li>
+            <li class='drop'>
+              <a href="{% url 'listings' %}">Properties</a>
+              <ul class='nav-dropdown'>
+                <li><a href="{% url 'listings' %}">Our Listings</a></li>
+                <li><a href="{% url 'searchListings' %}">Search Listings</a></li>
+                <li><a href="{% url 'searchForclosures' %}">Search Forclosures</a></li>
+              </ul>
+            </li>
             <li><a href="{% url 'agents' %}">Meet The Team</a></li>
             <li class='drop'>
               <a>Community</a>
