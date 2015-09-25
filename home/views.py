@@ -119,7 +119,7 @@ def contactus(request):
     return render(request, 'home/contactus.html',context)
 
 def searchListings(request):
-    return render(request, 'home/searchListings.html')
+    return render(request, 'home/searchlistings.html')
 
 def searchForclosures(request):
-    return render(request, 'home/searchForclosures.html')
+    return render(request, 'home/searchforclosures.html')
