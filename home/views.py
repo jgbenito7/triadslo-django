@@ -5,6 +5,7 @@ from .models import Listing
 from .models import Agent
 from .models import Gallery
 from .models import Testimonial
+from .models import BestOfSlo
 from django.views.decorators.csrf import ensure_csrf_cookie
 from .forms import ContactAgentForm
 from .forms import RequestShowingForm
@@ -123,3 +124,11 @@ def searchListings(request):
 
 def searchForclosures(request):
     return render(request, 'home/searchforclosures.html')
+
+def bestOf(request, agent_id = None, *args, **kwargs):
+    things = BestOfSlo.objects.filter(category='Things To Do')[:];
+    places = BestOfSlo.objects.filter(category='Places To See')[:];
+    dine = BestOfSlo.objects.filter(category='Wine and Dine')[:];
+    allBestOf = BestOfSlo.objects.order_by('order')[:];
+    context = {'things':things, 'places':places, 'dine':dine, 'allBestOf':allBestOf}
+    return render(request, 'home/bestofslo.html', context)

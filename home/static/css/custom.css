@@ -278,6 +278,10 @@ h1.pageTitle{
   color:#ea3d36;
 }
 
+.grey-text{
+  color:rgb(145, 150, 147);
+}
+
 .green-back{
   background-color: #0eaaa6 !important;
 }
@@ -289,6 +293,8 @@ h1.pageTitle{
 .red-back{
   background-color: #ea3d36 !important;
 }
+
+
 
 @media (max-width:991px){
   .margin-top{
@@ -315,4 +321,32 @@ h1.pageTitle{
 #frame2{
   width:100%;
   height:900px;
+}
+
+.bottom-overlay{
+  position:absolute;
+  width:100%;
+  height:auto;
+  padding:5px;
+  background:rgba(50,50,50,.6);
+  bottom:0px;
+  color:white;
+  font-size:20px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.description-hover{
+  width:100%;
+  position:absolute;
+  top:40% !important;
+  height:auto;
+  padding:10px !important;
+  background:rgba(50,50,50,.6) !important;
+  text-align: center;
+  left:0 !important;
+  margin:0 !important;
+  color:white!important;
+  font-size:13px !important;
+  opacity: 1 !important;
 }

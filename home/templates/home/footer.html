@@ -5,12 +5,13 @@
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
                 <div class="osLight footer-header">Triad Real Estate Group</div>
                 <ul class="footer-nav pb20">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Properties</a></li>
-                    <li><a href="#">Meet The Team</a></li>
-                    <li><a href="blog.html">Community</a></li>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'listings' %}">Our Listings</a></li>
+                    <li><a href="{% url 'searchListings' %}">Search Listings</a></li>
+                    <li><a href="{% url 'searchForclosures' %}">Search Forclosures</a></li>
+                    <li><a href="{% url 'agents' %}">Meet The Team</a></li>
+                    <li><a href="http://www.mortgagecalculator.org/">Mortgage Calculator</a></li>
+                    <li><a href="{% url 'contactus' %}">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">

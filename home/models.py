@@ -16,6 +16,8 @@ from preferences.models import Preferences
 
 YES_OR_NO = (('yes','yes'),('no','no'))
 YES_NO_HIDE = (('yes','yes'),('no','no'),('hide','hide'))
+BEST_OF = (('Things To Do','Things to Do'),('Places To See','Places To See'),('Wine and Dine','Wine and Dine'))
+
 
 STATUS = (
     ('active','active'),
@@ -48,18 +50,6 @@ class Agent(models.Model):
         db_table = 'agents'
         ordering = ('order',)
 
-class BestOfSlo(models.Model):
-    id = models.IntegerField(primary_key=True)  # AutoField?
-    #precedence = models.IntegerField()
-    title = models.CharField(max_length=255, blank=True)
-    description = models.TextField(blank=True)
-    image_name = models.CharField(max_length=255, blank=True)
-    type = models.CharField(max_length=14)
-
-    class Meta:
-        db_table = 'best_of_slo'
-
-
 class Development(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
     #precedence = models.IntegerField()
@@ -72,8 +62,6 @@ class Development(models.Model):
     class Meta:
         db_table = 'developments'
         ordering = ('order',)
-
-
 
 class Listing(models.Model):
     id = models.IntegerField(primary_key=True)  # AutoField?
@@ -134,5 +122,18 @@ class Testimonial(models.Model):
     testimonial = models.TextField(null=True,blank=True)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
+    class Meta(object):
+        ordering = ('order',)
+
+class BestOfSlo(models.Model):
+    id = models.AutoField(primary_key=True)  # AutoField?
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+    title = models.CharField(max_length=75)
+    link = models.CharField(max_length=75, null=True)
+    category = models.CharField(max_length=15, choices=BEST_OF, default='no')
+    description = models.CharField(max_length=35, null=True)
+    latitude = models.FloatField(default=0,blank=True)
+    longitude = models.FloatField(default=0,blank=True)
+    picture = models.ImageField(upload_to="images/bestofslo/",blank=True); #stores in media root
     class Meta(object):
         ordering = ('order',)

@@ -8,6 +8,7 @@ from .models import Listing
 from .models import Agent
 from .models import Development
 from .models import Testimonial
+from .models import BestOfSlo
 from home.models import MyPreferences
 
 #admin.site.register(MyPreferences, PreferencesAdmin)
@@ -24,7 +25,11 @@ class DevelopmentAdmin(SortableAdminMixin, admin.ModelAdmin):
 class TestimonialAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ('agent','testimonial')
 
+class BestOfSloAdmin(SortableAdminMixin, admin.ModelAdmin):
+    list_display = ('title','category')
+
 admin.site.register(Listing,ListingAdmin)
 admin.site.register(Agent,AgentAdmin)
 admin.site.register(Development,DevelopmentAdmin)
 admin.site.register(Testimonial,TestimonialAdmin)
+admin.site.register(BestOfSlo,BestOfSloAdmin)
