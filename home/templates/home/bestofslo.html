@@ -25,12 +25,15 @@
         <!-- Header -->
 
         <div id="header">
-            <div class="logo">
-                <a href="{% url 'agents' %}">
-                    <span class="fa fa-arrow-left marker"></span>
-                    <span class="logoText">Go Back</span>
-                </a>
-            </div>
+          <div class="logo">
+              <a href="{% url 'index' %}">
+                  <span class="fa fa-arrow-left marker"></span>
+                  <span class="logoText">Go Back</span>
+              </a>
+          </div>
+          <div class='home-title' style='color:#333;margin-left:10px;float:left;'>Triad's Best Of SLO</div>
+
+
             <div class='icon-wrap'>
             <a href="https://www.facebook.com/triad.slo" target="_blank" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-facebook"></span></a>
             <a href="https://twitter.com/search?q=TriadREGroup&src=typd" target="_blank" class="btn btn-sm btn-icon btn-round btn-o btn-black"><span class="fa fa-twitter"></span></a>
@@ -48,14 +51,13 @@
             <div id="content" class="mob-max">
               <div class="singleTop whiteBg">
                   <div class="row mb20">
-                    <div class='col-xs-12'>
-                      <div class='home-title grey-text mb20'>
-                        Things To Do
-                      </div>
+                    <div class='home-title grey-text mb20'>
+                      <img style='' src='/static/images/marker-green.png'> Things To Do
                     </div>
                     {% for item in things %}
                     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                         <a href='{{item.link}}' class="propWidget-2">
+                            <div class='id-tag' style='display:none'>{{item.id}}</div>
                             <div class="fig">
                                 <img style='border-radius:3px;height:160px'; src="/media/{{item.picture}}">
                                 <img class='blur' style='border-radius:3px;height:160px'; src="/media/{{item.picture}}">
@@ -69,14 +71,13 @@
                     {% endfor %}
                   </div>
                   <div class="row mb20">
-                    <div class='col-xs-12'>
                       <div class='home-title grey-text mb20'>
-                        Places To See
+                        <img style='' src='/static/images/marker-blue.png'> Places To Stay
                       </div>
-                    </div>
                     {% for item in places %}
                     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                         <a href='{{item.link}}' class="propWidget-2">
+                            <div class='id-tag' style='display:none'>{{item.id}}</div>
                             <div class="fig">
                                 <img style='border-radius:3px;height:160px'; src="/media/{{item.picture}}" alt="Modern Residence in New York">
                                 <img class='blur' style='border-radius:3px;height:160px'; src="/media/{{item.picture}}" alt="Modern Residence in New York">
@@ -90,14 +91,13 @@
                     {% endfor %}
                   </div>
                   <div class="row mb20">
-                    <div class='col-xs-12'>
                       <div class='home-title grey-text mb20'>
-                        Wine and Dine
+                        <img style='' src='/static/images/marker-magenta.png'> Wine and Dine
                       </div>
-                    </div>
                     {% for item in dine %}
                     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                         <a href='{{item.link}}' class="propWidget-2">
+                            <div class='id-tag' style='display:none'>{{item.id}}</div>
                             <div class="fig">
                                 <img style='border-radius:3px; height:160px'; src="/media/{{item.picture}}" alt="Modern Residence in New York">
                                 <img class='blur' style='border-radius:3px; height:160px'; src="/media/{{item.picture}}" alt="">
@@ -201,7 +201,8 @@
             {% elif item.category == "Wine and Dine" %}
             markerIcon : "marker-blue.png",
             {% endif %}
-            id: {{item.id}}
+            id: "{{item.id}}",
+            link: "{{item.link}}"
         },
 
         {% endif %}
@@ -247,7 +248,7 @@
                     draggable: false,
                     animation: google.maps.Animation.DROP,
                 });
-                var infoboxContent = '<div class="infoW">' +
+                var infoboxContent = '<div class="infoW box' +  prop.id + '">' +
                                         '<div class="propImg">' +
                                             '<img src="' + prop.image + '">' +
                                             '<div class="propBg">' +

@@ -16,7 +16,7 @@ from preferences.models import Preferences
 
 YES_OR_NO = (('yes','yes'),('no','no'))
 YES_NO_HIDE = (('yes','yes'),('no','no'),('hide','hide'))
-BEST_OF = (('Things To Do','Things to Do'),('Places To See','Places To See'),('Wine and Dine','Wine and Dine'))
+BEST_OF = (('Things To Do','Things to Do'),('Places To Stay','Places To Stay'),('Wine and Dine','Wine and Dine'))
 
 
 STATUS = (
@@ -129,7 +129,7 @@ class BestOfSlo(models.Model):
     id = models.AutoField(primary_key=True)  # AutoField?
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
     title = models.CharField(max_length=75)
-    link = models.CharField(max_length=75, null=True)
+    link = models.CharField(max_length=75, blank=True, null=True)
     category = models.CharField(max_length=15, choices=BEST_OF, default='no')
     description = models.CharField(max_length=35, null=True)
     latitude = models.FloatField(default=0,blank=True)

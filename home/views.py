@@ -74,6 +74,7 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
     agents = Agent.objects.filter(id=agent_id).order_by('order')[:]
     allListings = Listing.objects.filter(published='yes').order_by('order')[:];
     gallery = Gallery.objects.order_by('title')[:];
+    testimonials = Testimonial.objects.filter(agent__id = agent_id)[:]
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -94,7 +95,7 @@ def singleAgent(request, agent_id = None, *args, **kwargs):
         form = ContactAgentForm()
 
 
-    context = {'agents': agents, 'gallery':gallery, 'allListings':allListings, 'form':form}
+    context = {'agents': agents, 'gallery':gallery, 'allListings':allListings, 'form':form, 'testimonials':testimonials}
     return render(request, 'home/profile.html', context)
 
 def contactus(request):

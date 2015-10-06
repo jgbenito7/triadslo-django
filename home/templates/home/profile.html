@@ -14,6 +14,7 @@
         <link href="/static/css/app.css" rel="stylesheet">
         <link href="/static/css/custom.css" rel="stylesheet">
         <script src="/static/js/jquery-2.1.1.min.js"></script>
+        <script src="/static/js/readmore.js"></script>
 
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -83,7 +84,7 @@
                         <div class="col-md-6 pb20">
                             {% if agent.bio %}
                             <div class="pc-about osLight">About me</div>
-                            <div class="pb20">{{agent.bio}}</div>
+                            <div id='readmore' class="pb20">{{agent.bio}}</div>
                             {% endif %}
                         </div>
                         <div class="col-md-6">
@@ -109,14 +110,55 @@
 
                                 <button type='submit' value='OK' class="btn btn-green">Send Message</button>
                             </form>
+
+                        </div>
+
+                    </div>
+                    <div class="pc-about osLight">Testimonials</div>
+                    <div id="home-testimonials" class="carousel slide carousel-wb mb60" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          {% if testimonials %}
+                            {% for testimonial in testimonials %}
+                              {% if forloop.counter0 == 0 %}
+                              <li data-target="#home-testimonials" data-slide-to="{{forloop.counter0}}" class="active"></li>
+                              {% else %}
+                              <li data-target="#home-testimonials" data-slide-to="{{forloop.counter0}}" class=""></li>
+                              {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                        </ol>
+                        <div class="carousel-inner" style='width:100%'>
+                          {% if testimonials %}
+                            {% for testimonial in testimonials %}
+                                  {% if forloop.counter0 == 0 %}
+                                  <div class="item active">
+                                  {% else %}
+                                  <div class="item">
+                                  {% endif %}
+                                      <div class="home-testim" style='margin-left:0px;'>
+                                          <div class="home-testim-text">{{testimonial.testimonial}}</div>
+                                          <div class="home-testim-name">{{agent.first}} {{agent.last}}</div>
+                                      </div>
+                                  </div>
+                            {% endfor %}
+                          {% endif %}
                         </div>
                     </div>
                 </div>
+                </div>
+
             </div>
             <div class="clearfix"></div>
 
         </div>
         {% endfor %}
+        <script>
+          $('#readmore').readmore({
+            speed: 50,
+            collapsedHeight:325
+          });
+        </script>
+
         <script src="/static/js/json2.js"></script>
 
         <script src="/static/js/underscore.js"></script>
